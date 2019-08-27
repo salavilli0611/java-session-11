@@ -7,7 +7,7 @@ import java.util.Set;
 import com.javagurs.session.javaclass.Movie;
 
 
-public class CreateMovieData  implements CreateMovieService{
+public class CreateMovieDataServiceImpl  implements CreateMovieService{
 	
 	Movie movie1 = new Movie("1.0", null, "Sunny", "English");
 	Movie movie2 = new Movie("2.0", null, "Anil", "Tamil");
@@ -54,10 +54,34 @@ public class CreateMovieData  implements CreateMovieService{
 		moviesSet.add(movie2);
 		moviesSet.add(movie3);
 		System.out.println("Movie List Size" + moviesSet.size());
-		
-		
-		
 	}
+		
+	
+	
+	public void publishMoviesList(List<Movie> movies)
+	{	
+		List<Movie> moviesRetreivew = new ArrayList<Movie>();
+		
+		for(Movie reviewRow  : movies)
+		{
+			if(reviewRow.getMovieName().equalsIgnoreCase("2.0"))
+			{
+				reviewRow.setMovieReview("Average");
+				
+			}
+			moviesRetreivew.add(reviewRow);
+		}		
+		
+		System.out.println("Movie List " + moviesRetreivew.toString());
+		System.out.println("Movie List Size" + moviesRetreivew.size());
+	}
+	
+	public void publishMovieSet(Set<Movie> movies)
+	{
+		System.out.println("Movie Set " + movies.toString());
+		System.out.println("Movie Set Size" + movies.size());
+	}
+	
 	
 	
 
