@@ -22,6 +22,7 @@ public class GenerateMovies {
 		Movie movie6 = new Movie("3.0", null, "Ramesh", "Telugu");
 		
 		CreateMovieService createMovieData = new CreateMovieDataServiceImpl();
+		
 		List<Movie> moviesList = new ArrayList<Movie>();
 		moviesList.add(movie4);
 		moviesList.add(movie5);
@@ -35,6 +36,8 @@ public class GenerateMovies {
 		
 		createMovieData.publishMovieSet(moviesSet);
 		createMovieData.publishMoviesList(moviesList);
+		createMovieData.insertMoviesList(moviesList);
+		createMovieData.insertMoviesListConcurrentException(moviesList);
 		
 	}
 	

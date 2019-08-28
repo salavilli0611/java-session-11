@@ -13,4 +13,6 @@ public interface CreateMovieService {
 	
 	public void publishMoviesList(List<Movie> movies);
 	public void publishMovieSet(Set<Movie> movies);
+	
+	public void insertMoviesListConcurrentException(List<Movie> movies);
 }
